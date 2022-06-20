@@ -15,7 +15,6 @@ const uploadImg = multer({storage: storage}).single('image');
 
 const getAllTea = (req, res, next) => {
 
-    // res.json({message: "GET all tea"});
     Tea.find({}, (err, data) => {
         if (err) return res.json({Error: err});
         return res.json(data);
@@ -25,7 +24,6 @@ const getAllTea = (req, res, next) => {
 
 const newTea = (req, res, next) => {
 
-    // res.json({message:"POST new tea"});
     Tea.findOne({name: req.body.name}, (err, data) => {
         // if not in db add new tea
         if(!data){
@@ -55,7 +53,6 @@ const newTea = (req, res, next) => {
 
 const deleteAllTea = (req, res, next) => {
 
-    // res.json({message: "DELETE all tea"});
     Tea.deleteMany({}, err => {
         if(err) return res.json({message: "Complete delete failed"});
 
@@ -65,7 +62,7 @@ const deleteAllTea = (req, res, next) => {
 
 
 const getOneTea = (req, res, next) => {
-    // res.json({message: "GET 1 tea"});
+
     let name = req.params.name;
 
     Tea.findOne({name: name}, (err, data) => {
@@ -79,7 +76,6 @@ const getOneTea = (req, res, next) => {
 }
 
 const newComment = (req, res, next) => {
-    // res.json({message: "POST 1 tea comment"});
 
     let name = req.params.name;
     let newComment = req.body.comment;
@@ -115,7 +111,6 @@ const newComment = (req, res, next) => {
 }
 
 const deleteOneTea = (req, res, next) => {
-    // res.json({message: "DELETE 1 tea"});
 
     let name = req.params.name;
 
