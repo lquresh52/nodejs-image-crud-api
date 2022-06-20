@@ -1,0 +1,8 @@
+
+URL	HTTP Method	Message Response
+localhost:3000/tea	GET	GET all tea
+localhost:3000/tea	POST	POST new tea
+localhost:3000/tea	DELETE	DELETE all tea
+localhost:3000/tea/green	GET	GET 1 tea
+localhost:3000/tea/green	POST	POST 1 tea comment
+localhost:3000/tea/green	DELETE	DELETE 1 tea 
